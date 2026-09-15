@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Perfil Frutiger Aero - Yanzin_RGK</title>
+ <style>
+ * {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ body {
+ background: #0f52ba url('https://lh3.googleusercontent.com/d/1zernuy5ADahM4wEFH5QEBy42qZaVR5eo') no-repeat center center fixed;
+ background-size: cover;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+ padding: 20px;
+ color: #1a2b4c;
+ }
+
+ .container {
+ width: 100%;
+ max-width: 460px;
+ display: flex;
+ flex-direction: column;
+ gap: 15px;
+ }
+
+ /* Estilo Janela Windows Aero */
+ .aero-window {
+ background: rgba(255, 255, 255, 0.55);
+ backdrop-filter: blur(14px);
+ -webkit-backdrop-filter: blur(14px);
+ border: 1px solid rgba(255, 255, 255, 0.85);
+ border-radius: 10px;
+ box-shadow: 0 8px 32px 0 rgba(0, 50, 100, 0.35),
+ inset 0 1px 0 rgba(255, 255, 255, 0.9);
+ overflow: hidden;
+ }
+
+ /* Barra de Título */
+ .window-titlebar {
+ background: linear-gradient(to bottom, rgba(255,255,255,0.85) 0%, rgba(200,230,255,0.65) 50%, rgba(150,200,255,0.55) 51%, rgba(220,240,255,0.85) 100%);
+ padding: 6px 12px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+ }
+
+ .window-title-left {
+ display: flex;
+ align-items: center;
+ gap: 6px;
+ }
+
+ .windows-logo-icon {
+ width: 16px;
+ height: 16px;
+ object-fit: contain;
+ }
+
+ .window-title {
+ font-size: 12px;
+ font-weight: bold;
+ color: #103050;
+ text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+ }
+
+ .window-controls {
+ display: flex;
+ gap: 4px;
+ }
+
+ .btn-ctrl {
+ width: 14px;
+ height: 14px;
+ border-radius: 3px;
+ border: 1px solid rgba(0,0,0,0.3);
+ display: inline-block;
+ font-size: 9px;
+ text-align: center;
+ line-height: 12px;
+ cursor: pointer;
+ font-weight: bold;
+ }
+
+ .btn-min { background: linear-gradient(#e1e1e1, #a5a5a5); }
+ .btn-max { background: linear-gradient(#e1e1e1, #a5a5a5); }
+ .btn-close { background: linear-gradient(#fca8a8, #e81123); color: white; }
+
+ /* Conteúdo do Perfil */
+ .profile-card {
+ padding: 16px;
+ display: flex;
+ align-items: center;
+ gap: 15px;
+ }
+
+ .avatar-container {
+ position: relative;
+ }
+
+ .avatar {
+ width: 75px;
+ height: 75px;
+ border-radius: 12px;
+ border: 2px solid #ffffff;
+ box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+ object-fit: cover;
+ background: #87ceeb;
+ }
+
+ .profile-info {
+ display: flex;
+ flex-direction: column;
+ gap: 4px;
+ }
+
+ .username {
+ font-weight: bold;
+ font-size: 18px;
+ color: #0d3b66;
+ }
+
+ .pronouns {
+ font-size: 12px;
+ color: #3b629b;
+ }
+
+ .badge-container {
+ display: flex;
+ gap: 6px;
+ margin-top: 4px;
+ }
+
+ .badge {
+ background: linear-gradient(180deg, #ffffff 0%, #dbeafe 100%);
+ border: 1px solid #93c5fd;
+ padding: 2px 8px;
+ border-radius: 12px;
+ font-size: 11px;
+ font-weight: bold;
+ color: #1e40af;
+ box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+ }
+
+ /* Botoes de Ação Frutiger Aero */
+ .action-buttons {
+ display: flex;
+ gap: 8px;
+ }
+
+ .aero-button {
+ flex: 1;
+ padding: 10px 6px;
+ border: 1px solid #70a1ff;
+ border-radius: 8px;
+ background: linear-gradient(180deg, #ffffff 0%, #e1f0ff 48%, #b3d7ff 52%, #d2e8ff 100%);
+ color: #003366;
+ font-weight: bold;
+ font-size: 13px;
+ cursor: pointer;
+ text-decoration: none;
+ box-shadow: 0 2px 5px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.9);
+ transition: all 0.2s ease;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 6px;
+ text-align: center;
+ }
+
+ .aero-button:hover {
+ background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 48%, #cce5ff 52%, #e6f2ff 100%);
+ box-shadow: 0 3px 8px rgba(0,100,255,0.3), inset 0 1px 0 #fff;
+ }
+
+ /* Botão de Like Global */
+ .like-button {
+ background: linear-gradient(180deg, #ffffff 0%, #ffe6ee 48%, #ffb3cc 52%, #ffd2e0 100%);
+ border: 1px solid #ff70a6;
+ color: #800033;
+ }
+
+ .like-button:hover {
+ background: linear-gradient(180deg, #ffffff 0%, #fff0f5 48%, #ffcce0 52%, #ffe6f0 100%);
+ box-shadow: 0 3px 8px rgba(255,0,100,0.3), inset 0 1px 0 #fff;
+ }
+
+ .like-button.liked {
+ background: linear-gradient(180deg, #ff70a6 0%, #ff3377 100%);
+ color: #ffffff;
+ }
+
+ /* Seção About Me */
+ .about-content {
+ padding: 14px 16px;
+ font-size: 13px;
+ line-height: 1.5;
+ color: #0d3b66;
+ font-style: italic;
+ text-align: center;
+ }
+
+ /* Grade de Links com Ícones Personalizados */
+ .links-grid {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 10px;
+ padding: 12px;
+ }
+
+ .link-item {
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ background: rgba(255, 255, 255, 0.65);
+ border: 1px solid rgba(255, 255, 255, 0.9);
+ border-radius: 8px;
+ padding: 8px 12px;
+ text-decoration: none;
+ color: #0d3b66;
+ font-weight: bold;
+ font-size: 13px;
+ box-shadow: inset 0 1px 2px rgba(255,255,255,0.8), 0 2px 4px rgba(0,0,0,0.08);
+ transition: all 0.2s ease;
+ }
+
+ .link-item:hover {
+ background: rgba(255, 255, 255, 0.9);
+ transform: translateY(-2px);
+ box-shadow: 0 4px 8px rgba(0,80,200,0.2);
+ }
+
+ .link-icon {
+ width: 24px;
+ height: 24px;
+ object-fit: contain;
+ }
+
+ .donate-btn {
+ grid-column: span 2;
+ background: linear-gradient(180deg, #fff 0%, #ffe6a0 48%, #ffc030 52%, #ffea80 100%);
+ border: 1px solid #e6a000;
+ color: #5c3a00;
+ justify-content: center;
+ }
+ </style>
+</head>
+<body>
+
+ <div class="container">
+
+ <!-- Janela de Perfil -->
+ <div class="aero-window">
+ <div class="window-titlebar">
+ <div class="window-title-left">
+ <img src="https://lh3.googleusercontent.com/d/1p1Cn3DC6PPXmY9H7I6W91s28XxH2Z5Hw" class="windows-logo-icon" alt="Windows Logo">
+ <span class="window-title">Yanzin_RGK - Profile</span>
+ </div>
+ <div class="window-controls">
+ <span class="btn-ctrl btn-min">-</span>
+ <span class="btn-ctrl btn-max">□</span>
+ <span class="btn-ctrl btn-close">✕</span>
+ </div>
+ </div>
+
+ <div class="profile-card">
+ <div class="avatar-container">
+ <img class="avatar" src="https://lh3.googleusercontent.com/d/1jLKvjQb7ldlrruWlmgz0VkEL6bS-HQT-" alt="Foto de Perfil">
+ </div>
+ <div class="profile-info">
+ <span class="username">Yanzin_RGK</span>
+ <span class="pronouns">@yanzin_rgk</span>
+ <div class="badge-container">
+ <span class="badge">Gamer</span>
+ <span class="badge">Content Creator</span>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Botão de Curtida Global Interativo -->
+ <div class="action-buttons">
+ <button class="aero-button like-button" id="likeBtn">
+ <span id="likeIcon">♡</span> <span id="likeText">Curtir</span> (<span id="likeCount">0</span>)
+ </button>
+ <a href="https://discord.gg/bs37ujGZrA" target="_blank" class="aero-button">
+ <img src="https://lh3.googleusercontent.com/d/1OA3iY-KfUMcP9vMflZf01QTalRJanRp1" class="link-icon" alt="Discord"> Discord
+ </a>
+ </div>
+
+ <!-- Janela About Me -->
+ <div class="aero-window">
+ <div class="window-titlebar">
+ <div class="window-title-left">
+ <span class="window-title">About Me</span>
+ </div>
+ <div class="window-controls">
+ <span class="btn-ctrl btn-min">-</span>
+ <span class="btn-ctrl btn-max">□</span>
+ <span class="btn-ctrl btn-close">✕</span>
+ </div>
+ </div>
+ <div class="about-content">
+ "Você não tem medo da morte, mas sim de perder tudo o que você conquistou."
+ </div>
+ </div>
+
+ <!-- Janela de Links -->
+ <div class="aero-window">
+ <div class="window-titlebar">
+ <div class="window-title-left">
+ <img src="https://lh3.googleusercontent.com/d/1WX5ZhJMAy0nibhqRKTiynPoXAKXGrVeY" class="windows-logo-icon" alt="MSN">
+ <span class="window-title">My Social Networks & Games</span>
+ </div>
+ <div class="window-controls">
+ <span class="btn-ctrl btn-min">-</span>
+ <span class="btn-ctrl btn-max">□</span>
+ <span class="btn-ctrl btn-close">✕</span>
+ </div>
+ </div>
+
+ <div class="links-grid">
+ <a href="https://youtube.com/@yanzin_rgk?si=J59ZPIRuAvcc7Z7X" target="_blank" class="link-item">
+ <img src="https://lh3.googleusercontent.com/d/1eRjNO-3PxnlEINjU6LLfH0tVgWsqzEJ_" class="link-icon" alt="YouTube">
+ <span>YouTube</span>
+ </a>
+
+ <a href="https://discord.gg/bs37ujGZrA" target="_blank" class="link-item">
+ <img src="https://lh3.googleusercontent.com/d/1OA3iY-KfUMcP9vMflZf01QTalRJanRp1" class="link-icon" alt="Discord">
+ <span>Discord</span>
+ </a>
+
+ <a href="https://steamcommunity.com/profiles/76561199756055160" target="_blank" class="link-item">
+ <img src="https://lh3.googleusercontent.com/d/1Yyv-i0hMdVosFlJYBMbzsF7SA4cDWR7c" class="link-icon" alt="Steam">
+ <span>Steam</span>
+ </a>
+
+ <a href="https://www.roblox.com/pt/users/1871237518/profile" target="_blank" class="link-item">
+ <img src="https://lh3.googleusercontent.com/d/1mxN2217aosVnG62cMHQ2KRRkOxvJIBgJ" class="link-icon" alt="Roblox">
+ <span>Roblox</span>
+ </a>
+
+ <a href="https://www.xbox.com/pt-BR/play/user/YANZINxRGK" target="_blank" class="link-item">
+ <img src="https://lh3.googleusercontent.com/d/1ki3_RGks2oFqhHqFm4XVxqk1EU2bkSak" class="link-icon" alt="Minecraft">
+ <span>Minecraft</span>
+ </a>
+
+ <a href="https://www.instagram.com/yanzin_rgk?stkn=MXJxcGxwZzJ6NmZjbA==" target="_blank" class="link-item">
+ <img src="https://lh3.googleusercontent.com/d/1WX5ZhJMAy0nibhqRKTiynPoXAKXGrVeY" class="link-icon" alt="Instagram">
+ <span>Instagram</span>
+ </a>
+
+ <a href="https://www.tiktok.com/@yanzin_rgk?_r=1&_t=ZS-99joMQqGxTL" target="_blank" class="link-item">
+ <img src="https://lh3.googleusercontent.com/d/1WX5ZhJMAy0nibhqRKTiynPoXAKXGrVeY" class="link-icon" alt="TikTok">
+ <span>TikTok</span>
+ </a>
+
+ <a href="https://livepix.gg/yanzinxrgk" target="_blank" class="link-item donate-btn">
+ <span>💛 Doar no LivePix</span>
+ </a>
+ </div>
+ </div>
+
+ </div>
+
+ <!-- Integração com o Firestore (Firebase) para salvar as curtidas -->
+ <script type="module">
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+   import { getFirestore, doc, onSnapshot, updateDoc, increment, setDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+   const firebaseConfig = {
+     apiKey: "AIzaSyBoqDvC_Hi4a7zDqvmQ9APz0gbPVKMxAPk",
+     authDomain: "like-like-no-pf-do-site.firebaseapp.com",
+     projectId: "like-like-no-pf-do-site",
+     storageBucket: "like-like-no-pf-do-site.firebasestorage.app",
+     messagingSenderId: "1008879322876",
+     appId: "1:1008879322876:web:342c06a2d1c07886a2b979",
+     measurementId: "G-T4PZ279BDP"
+   };
+
+   // Inicializa Firebase
+   const app = initializeApp(firebaseConfig);
+   const db = getFirestore(app);
+
+   const likeBtn = document.getElementById('likeBtn');
+   const likeIcon = document.getElementById('likeIcon');
+   const likeText = document.getElementById('likeText');
+   const likeCount = document.getElementById('likeCount');
+
+   let hasLiked = localStorage.getItem('yanzin_has_liked_firebase') === 'true';
+
+   if (hasLiked) {
+     likeBtn.classList.add('liked');
+     likeIcon.textContent = '♥';
+     likeText.textContent = 'Curtido';
+   }
+
+   // Referência do documento na coleção 'likes'
+   const likeRef = doc(db, "likes", "profile_likes");
+
+   // Escuta o banco de dados em tempo real
+   onSnapshot(likeRef, (docSnap) => {
+     if (docSnap.exists()) {
+       likeCount.textContent = docSnap.data().count || 0;
+     } else {
+       setDoc(likeRef, { count: 0 });
+       likeCount.textContent = 0;
+     }
+   });
+
+   // Função ao clicar em Curtir
+   likeBtn.addEventListener('click', async () => {
+     if (hasLiked) return;
+
+     hasLiked = true;
+     localStorage.setItem('yanzin_has_liked_firebase', 'true');
+
+     likeBtn.classList.add('liked');
+     likeIcon.textContent = '♥';
+     likeText.textContent = 'Curtido';
+
+     try {
+       await updateDoc(likeRef, {
+         count: increment(1)
+       });
+     } catch (e) {
+       // Cria o documento caso ele não exista ainda no banco
+       await setDoc(likeRef, { count: 1 }, { merge: true });
+     }
+   });
+ </script>
+
+</body>
+  </html>
+
